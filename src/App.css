@@ -1,0 +1,70 @@
+.App{
+  text-align: center;
+}
+.Container{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5%;
+}
+.Producto{
+  flex-basis: 25%; 
+}
+.Encabezado{
+  display: flex;
+  justify-content: space-between;
+
+}
+.CarritoContenido{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.ProductosCart{
+  display: flex;
+  margin-bottom: 25%;
+  
+}
+.LimpiarBtn{
+
+  margin-right: 100%;
+}
+.Counter{
+  width: 25%;
+}
+.ResumenCarrito{
+  border: 1px solid rgba(207, 207, 207, 0.952);
+  height: 100%;
+}
+
+.TituloYSearch{
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.TituloProductos{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.Search{
+ margin-top: 4%;
+}
+.ImagenProducto img{
+    width:  200px;
+    height: 200px;
+    object-fit: cover;
+
+
+}
+.ImagenProductoCart img{
+  width: 100px;
+  height: 100px;
+    object-fit: cover;
+
+}
+.infoCartContainer{
+  margin-left:2%;
+}
