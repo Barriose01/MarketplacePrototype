@@ -10,7 +10,18 @@ import CompraRealizada from './Components/CompraRealizada';
 
 function App() {
 
-  const [carro,setCarro] = useState([])
+  //Con localStorage, se guardan los productos en el cart para
+  //que no desaparezcan al refrescar la pagina
+  const [carro,setCarro] = useState(()=>{
+
+    //productoEnCart es el key que se va a buscar para obtener el localStorage
+    const productosEnCart = localStorage.getItem("productoEnCart")
+
+    //State se establece a JSON.parse(productosEnCart) y se convierten
+    // en array (esta en un string en forma de array "[{}]") 
+    // si existe localStorage. Sino, se establece en []
+    return productosEnCart ? JSON.parse(productosEnCart):[]
+  })
 
   const AgregarCarro = (id) => {
     //Al carro anterior se le agrega el nuevo producto (productos[id]).
@@ -72,7 +83,12 @@ const totalCarrito = ()=>{
             }
         return total.toFixed(2)
     }
+
+//Al actualizar el carrito, se setea el localStorage con el valor del carro.
+//Cuando se refresque la pagina, se busca ese localStorage con productoEnCart
+//y se mantienen los productos
 useEffect(() => {
+    localStorage.setItem("productoEnCart",JSON.stringify(carro))
     console.log(carro);
 }, [carro]);
 
